@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- xml的設定檔，從web專案右鍵>JavanEE Tools> Generate Deployment Descriptor Stub -->
+<web-app
+metadata-complete="false"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" 
+version="4.0">
+  <display-name>WeFly_Web</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+ <!-- 用來定義login.html要的驗證碼圖片(uuu.vgb.view.CaptchaServlet: CaptchaServlet) -->
+  <servlet>
+	  <servlet-name>CaptchaServlet</servlet-name>
+	  <servlet-class>wefly.view.CaptchaServlet</servlet-class>
+		  <init-param>
+		  	<param-name>len</param-name>
+		  	<param-value>4</param-value>
+		  </init-param>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>CaptchaServlet</servlet-name>
+	  <url-pattern>/images/captcha.jpg</url-pattern>
+  </servlet-mapping>
+
+
+<!-- 用來定義register.html要的驗證碼圖片(uuu.vgb.view.CaptchaServlet: RegisterCaptchaServlet)
+	  沒有加<init-param>就是用原本預設的len=6	-->
+  <servlet>
+	  <servlet-name>RegisterCaptchaServlet</servlet-name>
+	  <servlet-class>wefly.view.CaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>RegisterCaptchaServlet</servlet-name>
+	  <url-pattern>/images/register_captcha.jpeg</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>

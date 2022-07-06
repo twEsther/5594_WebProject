@@ -1,0 +1,1 @@
+SELECT id, artist, lyricslanguage, song, yturl, duration FROM selectmusic WHERE song LIKE '%far%';

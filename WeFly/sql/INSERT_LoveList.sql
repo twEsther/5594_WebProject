@@ -1,0 +1,1 @@
+insert into lovelist (member_id, music_id) value(?,?);
